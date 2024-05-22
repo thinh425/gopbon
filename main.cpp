@@ -299,10 +299,12 @@ int main(){
                 total_restart++;
             }
             //danh goft
-            if(IsMouseButtonDown(MOUSE_BUTTON_LEFT)){
+            if((IsMouseButtonDown(MOUSE_BUTTON_LEFT))){
                 if(CheckCollisionPointCircle(mousepos,goftball,goftball_size)){
-                    keo = true;
-                    luotchoiused = true;
+                    if(velo.x<=0.1 &&velo.y<=0.1&&velo.x>=-0.1&&velo.y>=-0.1&&luotchoi>0){
+                        keo = true;
+                        luotchoiused = true;
+                    }   
                 }
             }else {
                 keo = false;
